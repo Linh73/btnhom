@@ -19,6 +19,29 @@ function query(string $query, array $data = [])
 }
 
 
+function redirect($page)
+{
+   header('Location: '.$page);
+    die;
+}
+
+
+function old_value($key) 
+{
+    if(!empty($_POST[$key]))
+        return $_POST[$key];
+        
+    return "";
+}
+
+function old_checked($key) 
+{
+    if(!empty($_POST[$key]))
+        return "checked";
+        
+    return "";
+}
+
 // create table
 function create_table() 
 {
