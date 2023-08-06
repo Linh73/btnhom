@@ -1,3 +1,3 @@
 <?php
-define('ROOT', 'http://localhost/nhombt/public');
+define('ROOT', 'http://localhost/btnhom/public');
 define('APP_NAME', "My Blog");  

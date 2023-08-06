@@ -16,8 +16,8 @@ function query(string $query, array $data = [])
     }
 
     return false;
-}
 
+}
 
 function redirect($page)
 {
@@ -42,8 +42,8 @@ function old_checked($key)
     return "";
 }
 
-// create table
-function create_table() 
+create_tables();
+function create_tables() 
 {
 
     $string = "mysql:hostname=".DBHOST.";";
@@ -57,40 +57,22 @@ function create_table()
     $stm = $con->prepare($query);
     $stm->execute();
 
-    /** users table */
+
+//     /** users table */
     $query = "create table if not exists users(
 
-        id int priamry key auto_increment,
-        username int  varchar(50) not null,
+        id int primary key auto_increment,
+        username varchar(50) not null,
         email varchar(100) not null,
         password varchar(255) not null,
-        image varchar(1024),
+        image varchar(1024) null,
         date datetime default current_timestamp,
         role varchar(10) not null,
 
         key username (username),
-        key email (email),
+        key email (email)
+    );";  // 2;18;34
 
-    )";
-
-
-
-    
-    /** Admin table */
-    $query = "create table if not exists Admin(
-
-        idAd int priamry key auto_increment,
-        nameAd varchar(50) not null,
-        email varchar(100) not null,
-        password varchar(255) not null,
-        image varchar(1024),
-        date_par datetime default current_timestamp,
-        profile text,
-
-        key username (username),
-        key email (email),
-
-    )";
 
 
     $stm = $con->prepare($query);
@@ -99,15 +81,14 @@ function create_table()
 
     /** Category table */
     $query = "create table if not exists categories(
-        idCate int priamry key auto_increment,
+        id int primary key auto_increment,
         category varchar(50) not null,
         slug varchar(100) not null,
         disables tinyint default 0,
 
         key slug (slug),
         key category (category)
-    
-    )";
+    );";
 
 
     $stm = $con->prepare($query);
@@ -120,24 +101,22 @@ function create_table()
 
 
 
-    /** post table */
-    $query = "create table if not exists Article(
-
-        id int priamry key auto_increment,
-        user_id int primary key auto_increment,
-        category_id int primary key auto_increment,
+//     /** post table */
+    $query = "create table if not exists Post(
+        id int primary key auto_increment,
+        user_id int,
+        category_id int ,
         title varchar(100) not null,
         content text null,
         image varchar(1024) null,
         date datetime default current_timestamp,
         slug varchar(100) not null,
 
-        key user_id (username),
+        key user_id (user_id),
         key category_id (category_id),
         key title (title),
         key slug (slug),
         key date (date)
-
     )";
 
     $stm = $con->prepare($query);

@@ -9,7 +9,7 @@
   {
     $errors['username'] = 'A user name is required';
   }else 
-  if(!preg_match("/^[a-zA-Z]$/",$_POST['username']))
+  if(!preg_match("/^[a-zA-Z]+$/", $_POST['username'])) 
   {
     $errors['username'] = 'Username can only have letters and no spaces';
   }
@@ -19,34 +19,26 @@
 
   if(empty($_POST['email'])) 
   {
-    $errors['email'] = 'A email name is required';
+    $errors['email'] = 'A email is required';
   }else
-   if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
+  if(!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) 
   {
-    $errors['email'] = ' email not valid';
+    $errors['email'] = "Email not valid";
   }else
-  if($email)
+  if($email) 
   {
     $errors['email'] = 'That email is already in use';
-  }
+  }else
 
   if(empty($_POST['password']))
   {
-    $errors['password'] = 'A email name is required';
+    $errors['password'] = 'A password is required';
   }else 
   if(strlen($_POST['password'] < 8))
   {
     $errors['password'] = 'password must be 8 characters or more';
-  }else 
-  if($_POST['password'] !== $_POST['retype_password'])
-  {
-    $errors['password'] = 'password do not match';
-   }
-
-  if(empty($_POST['terms']))
-  {
-    $errors['terms'] = 'please terms accept';
   }
+
 
     if(empty($errors))
     {
@@ -71,10 +63,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Login - My Blog</title>
+    <title>Login - <?=APP_NAME?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/btnhom/public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -94,14 +86,14 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="/btnhom/public/assets/css/signin.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin">
   <form method="post">
-    <a href="home.php">    <!-- fix xong thi bo .php-->
-      <img class="mb-4 rounded-circle shadow" src="/btnhom/public/assets/images/Gold_stupid.jpg" alt="" width="100" height="100" style= "object-fit: cover;">
+    <a href="home">    
+      <img class="mb-4 rounded-circle shadow" src="<?=ROOT?>/assets/images/Gold_stupid.jpg" alt="" width="100" height="100" style= "object-fit: cover;">
     </a>
     <h1 class="h3 mb-3 fw-normal">Create account</h1>
 
@@ -110,7 +102,7 @@
     <?php endif;?>
 
     <div class="form-floating">
-      <input  name="username" type="text" class="form-control mb-2" id="floatingInput" placeholder="Username">
+      <input value="<?=old_value('username')?>" name="username" type="text" class="form-control mb-2" id="floatingInput" placeholder="Username">
       <label for="floatingInput">Username</label>
     </div>
     <?php if(!empty($errors['username'])):?>
@@ -136,7 +128,7 @@
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="my-2">Already have an account? <a href="login.php"> Login here </a></div>      <!-- xoa .php tai day khi fix dc loi kia -->
+    <div class="my-2">Already have an account? <a href="<?=ROOT?>/login"> Login here </a></div>      
 
     <div class="checkbox mb-3">
       <label>

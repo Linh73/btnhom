@@ -1,10 +1,3 @@
-<?php
-  if(!empty($_POST)) 
-{
-  echo "something was posted";
-}
-?>
-
 
 <!doctype html>
 <html lang="en">
@@ -12,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Login </title>
+    <title>Login <?=APP_NAME?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/btnhom/public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -35,15 +28,15 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="/btnhom/public/assets/css/signin.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/signin.css" rel="stylesheet">
 
   </head>
   <body class="text-center">
     
 <main class="form-signin">
   <form method="post">
-    <a href="home.php">    <!-- fix xong thi bo .php-->
-      <img class="mb-4 rounded-circle shadow" src="/btnhom/public/assets/images/Gold_stupid.jpg" alt="" width="100" height="100" style= "object-fit: cover;">
+    <a href="home">    
+      <img class="mb-4 rounded-circle shadow" src="<?=ROOT?>/assets/images/Gold_stupid.jpg" alt="" width="100" height="100" style= "object-fit: cover;">
     </a>
     <h1 class="h3 mb-3 fw-normal">Please login</h1>
 
@@ -56,7 +49,7 @@
       <label for="floatingPassword">Password</label>
     </div>
     
-    <div class="my-2">Dont have an account? <a href="signup.php"> Signup here </a></div> <!-- xoa .php tai daykhi fix dc loi kia -->
+    <div class="my-2">Dont have an account? <a href="<?=ROOT?>/signup"> Signup here </a></div> 
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me

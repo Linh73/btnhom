@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Home </title>
+    <title>Home <?=APP_NAME?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/btnhom/public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/btnhom/public/assets/bootstrap/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap-icons.css" rel="stylesheet">
 
   <style> 
   .bi {
@@ -74,7 +74,7 @@ white-space: nowrap;
 
 </style>
     <!-- Custom styles for this template -->
-    <link href="/btnhom/public/assets/css/headers.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/headers.css" rel="stylesheet">
   </head>
   <body>
     
@@ -82,7 +82,7 @@ white-space: nowrap;
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-        <img class="bi me-2" src="/btnhom/public/assets/images/Gold_stupid.jpg" width="60" height="60" style="object-fit:over">
+        <img class="bi me-2" src="<?=ROOT?>/assets/images/Gold_stupid.jpg" width="60" height="60" style="object-fit:over">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -117,15 +117,15 @@ white-space: nowrap;
   <div class="ism-slider" data-transition_type="fade" data-play_type="loop" id="my-slider">
     <ol>
       <li>
-        <img src="/btnhom/public/assets/slider/ism/image/slides/slider1.jpg">
+        <img src="<?=ROOT?>/assets/slider/ism/image/slides/slider1.jpg">
         <div class="ism-caption ism-caption-0">My slide caption text</div>
       </li>
       <li>
-        <img src="/btnhom/public/assets/slider/ism/image/slides/slider2.jpg">
+        <img src="<?=ROOT?>/assets/slider/ism/image/slides/slider2.jpg">
         <div class="ism-caption ism-caption-0">My slide caption text</div>
       </li>
       <li>
-        <img src="/btnhom/public/assets/slider/ism/image/slides/slider3.jpg">
+        <img src="<?=ROOT?>/assets/slider/ism/image/slides/slider3.jpg">
         <div class="ism-caption ism-caption-0">My slide caption text</div>
       </li>
       <!-- <li>
@@ -151,7 +151,7 @@ white-space: nowrap;
               <a href="#" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-lg-5 col-12 d-lg-block">
-              <img class="bd-placeholder-img w-100" width="200" height="250" style=" object-fit:cover;" src="/btnhom/public/assets/images/nghe-dau-bep-cet.jpg"> <!-- dua anh vao day nay: phut thu 20 -->
+              <img class="bd-placeholder-img w-100" width="200" height="250" style=" object-fit:cover;" src="<?=ROOT?>/assets/images/nghe-dau-bep-cet.jpg"> <!-- dua anh vao day nay: phut thu 20 -->
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ white-space: nowrap;
               <a href="#" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-lg-5 col-12 d-lg-block">
-              <img class="bd-placeholder-img w-100" width="200" height="250" style=" object-fit:cover;" src="/btnhom/public/assets/images/home-monan.jpg"> <!-- dua anh vao day nay -->
+              <img class="bd-placeholder-img w-100" width="200" height="250" style=" object-fit:cover;" src="<?=ROOT?>/assets/images/home-monan.jpg"> <!-- dua anh vao day nay -->
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ white-space: nowrap;
         <h5>Useful Links</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="login.php" class="nav-link p-0 text-muted">Login</a></li>
+            <li class="nav-item mb-2"><a href="<?=ROOT?>/login" class="nav-link p-0 text-muted">Login</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
@@ -224,7 +224,7 @@ white-space: nowrap;
     </footer>
     </div>
 
-    <script src="/btnhom/public/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
      
   </body>
 </html>

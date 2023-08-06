@@ -1,7 +1,7 @@
 <?php
 
 require "../app/core/init.php";
-
+// define('ROOT', 'http://localhost/btnhom/public'); 
 
 $url = $_GET['url'] ?? 'home';
 $url = explode("/", $url);
@@ -12,7 +12,8 @@ $filename = "../app/pages/".$page_name.".php";
 
 if(file_exists($filename)) {
     require_once $filename;
-} else {
+} else 
+{
     require_once "../app/pages/404.php";
 }
-echo "My page";
+
