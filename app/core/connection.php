@@ -14,4 +14,3 @@ if($_SERVER['SERVER_NAME'] == "localhost")
     define('DBNAME', "MyBlogPHP");
     define('DBHOST', "localhost");
 }
-?>

@@ -1,19 +1,20 @@
 <?php
 
+session_start();
+
 require "../app/core/init.php";
-// define('ROOT', 'http://localhost/btnhom/public'); 
 
 $url = $_GET['url'] ?? 'home';
+$urk = strtolower($url);
 $url = explode("/", $url);
 
-$page_name= trim($url[0]);
-$filename = "../app/pages/".$page_name.".php";
+$page_name = trim($url[0]);
+$filename = "../app/pages/" . $page_name . ".php";
 
+$PAGE = get_pagination_vars();
 
-if(file_exists($filename)) {
+if (file_exists($filename)) {
     require_once $filename;
-} else 
-{
+} else {
     require_once "../app/pages/404.php";
 }
-
