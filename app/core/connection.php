@@ -5,8 +5,8 @@ class DatabaseConfig
     private $config = [
         'localhost' => [
             'DBUSER' => 'root',
-            'DBPASS' => 'password',
-            'DBNAME' => 'MyBlogPHP',
+            'DBPASS' => '',
+            'DBNAME' => 'myblogphp',
             'DBHOST' => 'localhost'
         ],
         // Add other environment configurations here
@@ -23,8 +23,8 @@ class DatabaseConfig
         // Default configuration if environment is not recognized
         return [
             'DBUSER' => 'root',
-            'DBPASS' => 'password',
-            'DBNAME' => 'MyBlogPHP',
+            'DBPASS' => '',
+            'DBNAME' => 'myblogphp',
             'DBHOST' => 'localhost'
         ];
     }
