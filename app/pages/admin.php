@@ -2,7 +2,7 @@
 
 if (!logged_in()) {
 
-  redirect('login');
+    redirect('login');
 }
 
 $section  = $url[1] ?? 'dashboard';
@@ -13,18 +13,18 @@ $filename = "../app/pages/admin/" . $section . ".php";
 
 if (!file_exists($filename)) {
 
-  $filename = "../app/pages/admin/404.php";
+    $filename = "../app/pages/admin/404.php";
 }
 
 if ($section == 'users') {
 
-  require_once "../app/pages/admin/users-controller.php";
+    require_once "../app/pages/admin/users-controller.php";
 } else if ($section == 'categories') {
 
-  require_once "../app/pages/admin/categories-controller.php";
+    require_once "../app/pages/admin/categories-controller.php";
 } else if ($section == 'posts') {
 
-  require_once "../app/pages/admin/posts-controller.php";
+    require_once "../app/pages/admin/posts-controller.php";
 }
 
 
@@ -165,9 +165,9 @@ if ($section == 'users') {
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ROOT ?>">
+                            <a class="nav-link" href="<?= ROOT ?>" target="blank_">
                                 <i class="bi bi-house"></i>
-                                Front end
+                                Client
                             </a>
                         </li>
 
@@ -193,9 +193,9 @@ if ($section == 'users') {
 
                 <?php
 
-        require_once $filename;
+                require_once $filename;
 
-        ?>
+                ?>
 
 
             </main>
